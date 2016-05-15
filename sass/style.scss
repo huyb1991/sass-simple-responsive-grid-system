@@ -1,1 +1,24 @@
 @import "grids";
+
+//== Website demo style
+body {
+  width:            90%;
+  margin:           auto;
+  text-align:       center;
+}
+.grid [class^="col-"] {
+  background-color: #eee;
+  border:           1px solid #222;
+  text-align:       center;
+  padding-top:      10px;
+  padding-bottom:   10px;
+}
+.row {
+  margin-bottom:    3%;
+}
+address {
+  text-align: right;
+}
+address a {
+  text-decoration: none;
+}
