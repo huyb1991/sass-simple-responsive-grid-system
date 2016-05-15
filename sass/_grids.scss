@@ -1,0 +1,60 @@
+//== Configs
+$grid-number-column:  12;
+$grid-column-spacing: 1%;
+
+/*== Grid systems
+  Small devices - Phones:   0 - 768px;
+  Medium devices - Tables:  768px - 1024px;
+  Large devices - Desktop:  1024px+;
+*/
+$screen-sm-max: 768px;
+$screen-md-max: 1024px; 
+
+//== Mixins
+@mixin box-sizing ($value) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+
+// Clearfix - Source: http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clear-fix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin make-grid($class) {
+  @for $i from 1 to ($grid-number-column + 1) {
+    .col-#{$class}-#{$i} {
+      width: 100% / ($grid-number-column / $i);
+    }
+  }
+}
+
+//== General grid system
+[class^="col-"] {
+  padding: 0 ($grid-column-spacing / 2);
+  min-height: 1px;
+  @include box-sizing(border-box);
+  float: left;
+}
+
+.row {
+  @include clear-fix();
+}
+
+@media (max-width: $screen-sm-max - 1) {
+  @include make-grid('sm');
+}
+@media (max-width: $screen-md-max - 1) and (min-width: $screen-sm-max) {
+  @include make-grid('md');
+}
+@media (min-width: $screen-md-max) {
+  @include make-grid('lg');
+}
