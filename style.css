@@ -11,11 +11,13 @@
   box-sizing: border-box;
   float: left; }
 
-.row:before, .row:after {
-  content: " ";
-  display: table; }
-.row:after {
-  clear: both; }
+.row {
+  margin: -0.5%; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
 
 @media (max-width: 767px) {
   .col-sm-1 {
