@@ -46,7 +46,7 @@ $screen-md-max: 1024px;
 }
 
 .row {
-  margin: 0 -($grid-column-spacing / 2);
+  margin: 0 (-$grid-column-spacing / 2);
   @include clear-fix();
 }
 
