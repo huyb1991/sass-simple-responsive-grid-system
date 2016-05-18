@@ -33,6 +33,7 @@ $screen-md-max: 1024px;
   @for $i from 1 to ($grid-number-column + 1) {
     .col-#{$class}-#{$i} {
       width: 100% / ($grid-number-column / $i);
+      float: left;
     }
   }
 }
@@ -41,8 +42,8 @@ $screen-md-max: 1024px;
 [class^="col-"] {
   padding: 0 ($grid-column-spacing / 2);
   min-height: 1px;
+  position: relative;
   @include box-sizing(border-box);
-  float: left;
 }
 
 .row {
