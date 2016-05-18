@@ -53,7 +53,7 @@ $screen-md-max: 1024px;
 @media (max-width: $screen-sm-max - 1) {
   @include make-grid('sm');
 }
-@media (max-width: $screen-md-max - 1) and (min-width: $screen-sm-max) {
+@media (min-width: $screen-sm-max) {
   @include make-grid('md');
 }
 @media (min-width: $screen-md-max) {
